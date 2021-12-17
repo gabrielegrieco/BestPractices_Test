@@ -1,0 +1,17 @@
+PRINCIPI SOLID NON RISPETTATI:
+Single responsability
+la classe Furnace è responsabile di regolazione, lettura e scrittura
+
+Open close
+difficile da espandere senza modificare il codice, in particolare per il funzionamento del metodo .regulate
+
+Dependency inversion
+sarebbe meglio dipendere dalle interfacce
+
+
+MODIFICHE FATTE:
+1. Ho creato le interfacce InputChannel e OutputChannel in cui inserire la logica implementativa dei 2 canali IO
+2. Ho creato le classi FurnaceInput e FurnaceOutput che le implementano nel mio caso speficico. Hanno una proprietà che
+salva l'indirizzo su cui fare l'input/output previsto.
+3. Utilizzo le nuove classi, istanziandole tramite l'interfaccia.
+4. Ora Furnace è addetto solamente alla regolazione.

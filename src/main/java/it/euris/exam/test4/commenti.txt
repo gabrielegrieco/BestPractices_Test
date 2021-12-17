@@ -1,0 +1,14 @@
+PATTERN UTILI:
+
+Builder  -> per decidere come costruire la "banca" ossia quali banconote e quante per tipo con codice riutilizzabile
+Singleton -> unica istanza della banca
+Chain of responsability -> per sapere che tipo di banconote sono state utilizzate
+
+HO MODIFICATO:
+1. Classe Bank che gestisce il numero di banconote presenti per tipo, quante ne sono state usate e che implementa
+il metodo per l'erogazione di quanto richiesto.
+
+//NON SONO RIUSCITO AD IMPLEMENTARE A PIENO:
+- LA CHAIN OF RESPONSABILITY
+- IL FILTRO CHE BLOCCHI QUANDO HO USATO TUTTE LE BANCONOTE DI UN DETERMINATO TIPO
+- IL BUILDER DELLA CLASSE BANK

@@ -1,0 +1,9 @@
+HO APPORTATO LE SEGUENTI MODIFICE:
+
+1. Isolato le caratteristiche proprie dell'automobile in una propria gerarchia (Car) da utilizzare assieme ad un pattern
+Factory Method a seconda del modello che viene indicato.
+
+2. La classe Factory implementa anche il pattern Singleton, dal momento che basta avere una sola istanza della factory.
+
+2. Isolato le caratteristiche proprie della parte di noleggio in una propria gerarchia (CarRent) utilizzata assieme al
+pattern Decoration per aggiungere le funzionalità di assicurazione e serbatoio pieno

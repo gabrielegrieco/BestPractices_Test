@@ -1,0 +1,43 @@
+I 5 principi solid sono:
+Single responsability
+Prevede che le classi siano specializzate ad eseguire meno compiti possibili (possibilmente 1 solo) in maniera
+specializzata. In questo modo avremo meno motivi per dover cambiare la classe e quindi meno occasioni in cui
+un codice funzionante potrebbe rompersi.
+Ad esempio se dovessi creare una classe rappresentativa di un'interfaccia, sarà delegare le funzionalità dei vari
+componenti necessari (bottoni, etichette, ecc.) a delle classi specifiche invece di inserire tutto il codice nella
+classe della finestra che andrà ad accogliere gli altri componenti.
+
+Open close
+Prevede di essere aperti alle estenzioni del nostro codice, ma chiusi alle modifiche. Questo perché modificare
+codice funzionante è sempre un rischio che potrebbe comprometterne l'utilizo, mentre l'estensione a nuove funzionalità
+(legate magari ad una nuova necessità) ci permetteranno un maggior riutilizzo del codice.
+Riprendendo l'esempio dell'interfaccia di prima, se volessimo passare da dei bottoni in bianco e nero a dei bottoni a
+colori, invece di modificare il vecchio metodo di stampa a schermo in bianco e nero, creerò un nuovo metodo per la
+ stampa a colori.
+
+Liskov substitution
+Prevede che dovrebbe essere possibile utilizzare una classe figlia al posto della propria superclasse all'interno della
+logica applicativa. Cioè è meglio evitare di compiere nella classe figlia un override di un metodo, stravolgendone
+completamente la logica o ancora peggio lasciandone il corpo vuoto.
+L'esempio più evidente credo sia proprio il caso in cui dentro una classe figlia io vada a compiere un override
+lasciandone vuoto il corpo tra le parentesi graffe.
+
+Interface segregation
+Prevede di evitare interfacce con tanti metodi poco coesi. Un client non dovrebbe dipendere da metodi che non utilizza
+e inoltre avere tanti metodi poco coesi aumenta di molto il rischio di dover modificare la logica implementativa
+dell'interfaccia, andando a contrastare anche i principi di single responsability e open close.
+Ad esempio in un'interfaccia di e-commerce, eviterò di avere una sola interfaccia che abbia sia metodi legati alla
+ vendita che metodi legati all'acquisto, perché sono 2 logiche differenti che servono ad utenti (classi nella
+ costruzione del programma) diversi. Quindi per evitare che la classe Buyer dipenda da metodi per il venditore che a
+ lui non servono, farò un'interfaccia dedicata al compratore ed una per il venditore.
+
+Dependency inversion
+Prevede che sia meglio dipendere dalle astrazioni rispetto alle implementazioni, ossia una classe è meglio se dipende da
+ una classe astratta o un'interfaccia rispetto ad un altro tipo di classe (se dipende da solo interfacce è ancora
+ meglio). Questo perché le implementazioni dei metodi "normali" è molto più facile che debbano venire aggiornate
+ rispetto ai metodi astratti.
+Ad esempio nel programma per l'e-commerce, la classe Buyer (che rappresenta il cliente che compra dal sito) implementerà
+un'interfaccia che includerà i metodi di scelta dei prodotti, di conferma dell'acquisto e di versamento dell'importo
+dovuto. Eviterò di farla derivare da un'altra classe "normale" che potrebbe avere delle proprietà o dei metodi che se
+cambiati potrebbero rompere a cascata anche la classe Buyer.
+
