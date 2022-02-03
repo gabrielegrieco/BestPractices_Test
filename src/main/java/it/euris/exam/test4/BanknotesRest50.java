@@ -22,6 +22,8 @@ public class BanknotesRest50 implements Chain {
 
         // da implementare il controllo sulla disponibilità dei tagli.
 
+        // trial commit
+
         int bancUsate;
         double resto;
 
